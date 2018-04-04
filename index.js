@@ -1,5 +1,6 @@
 var TIMEOUT_IN_SECS = 3 * 60
-var TEMPLATE = '<h1 style="height:30px;"><span class="js-timer-minutes">00</span>:<span class="js-timer-seconds">00</span></h1>'
+var ALERT_TIMEOUT_IN_SECS = 30
+var TEMPLATE = '<h1 style="font-size:30px;"><span class="js-timer-minutes">00</span>:<span class="js-timer-seconds">00</span></h1>'
 
 function padZero(number){
   return ("00" + String(number)).slice(-2);
@@ -86,7 +87,7 @@ function main(){
   var timerWiget = new TimerWidget()
   var intervalId = null
 
-  var alert_timer = new Timer(TIMEOUT_IN_SECS)
+  var alert_timer = new Timer(ALERT_TIMEOUT_IN_SECS) // create new timer, 30 secs
 
   timerWiget.mount(document.body)
 
